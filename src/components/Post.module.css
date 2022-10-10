@@ -4,6 +4,10 @@
   border-radius: 8px;
 }
 
+.post + .post {
+  margin-top: 2rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -44,4 +48,25 @@
   font-size: 0.875rem;
   line-height: 160%;
   color: var(--gray-400);
+}
+
+.content {
+  margin-top: 1.5rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  color: var(--gray-300);
+  line-height: 160%;
+}
+
+.content p a {
+  color: var(--green-500);
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 160%;
+}
+
+.content p a:hover {
+  color: var(--green-300);
 }
