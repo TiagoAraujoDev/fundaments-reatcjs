@@ -1,4 +1,5 @@
 import styles from "./Post.module.css";
+
 export function Post() {
   return (
     <article className={styles.post}>
@@ -25,7 +26,7 @@ export function Post() {
           no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
         </p>
         <p>
-          👉{" "}<a href="">jane.design/doctorcare</a>
+          👉 <a href="">jane.design/doctorcare</a>
         </p>
         <p>
           <a href="">#novoprojeto</a>{" "}
@@ -33,11 +34,13 @@ export function Post() {
           <a href="">#rocketseat</a>
         </p>
       </div>
-      <div className={styles.commentform}>
+      <form className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
-        <textarea placeholder="Deixe seu comentario..."></textarea>
-        <button>Publicar</button>
-      </div>
+        <textarea placeholder="Deixe seu comentário..." />
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   );
 }
