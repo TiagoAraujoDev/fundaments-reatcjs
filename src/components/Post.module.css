@@ -1,5 +1,5 @@
 .post {
-  background: var(--gray-800);
+  background: var(--grey-800);
   padding: 2.5rem;
   border-radius: 8px;
 }
@@ -24,7 +24,7 @@
   width: calc(3rem + 12px);
   height: calc(3rem + 12px);
   border-radius: 8px;
-  border: 4px solid var(--gray-800);
+  border: 4px solid var(--grey-800);
   outline: 2px solid var(--green-500);
 }
 
@@ -34,12 +34,12 @@
 }
 
 .profileInfo strong {
-  color: var(--gray-100);
+  color: var(--grey-100);
   line-height: 160%;
 }
 
 .profileInfo span {
-  color: var(--gray-400);
+  color: var(--grey-400);
   font-size: 0.875rem;
   line-height: 160%;
 }
@@ -47,7 +47,7 @@
 .postStatus {
   font-size: 0.875rem;
   line-height: 160%;
-  color: var(--gray-400);
+  color: var(--grey-400);
 }
 
 .content {
@@ -55,7 +55,7 @@
 }
 
 .content p {
-  color: var(--gray-300);
+  color: var(--grey-300);
   line-height: 160%;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .commentForm {
-  border-top: 1px solid var(--gray-600);
+  border-top: 1px solid var(--grey-600);
   margin-top: 1.5rem;
   padding-top: 1.5rem;
 }
@@ -83,7 +83,7 @@
 .commentForm strong {
   display: block;
   width: 100%;
-  color: var(--gray-100);
+  color: var(--grey-100);
   line-height: 160%;
   margin-bottom: 1rem;
 }
@@ -92,8 +92,8 @@
   width: 100%;
   height: 6rem;
   padding: 0.8125rem 1rem;
-  background: var(--gray-900);
-  color: var(--gray-100);
+  background: var(--grey-900);
+  color: var(--grey-100);
   line-height: 140%;
   border: none;
   border-radius: 8px;
@@ -133,4 +133,8 @@
 
 .commentForm button:hover {
   background: var(--green-300);
+}
+
+.commentList {
+  margin-top: 2rem; 
 }

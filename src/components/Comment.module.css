@@ -1,0 +1,79 @@
+.comment {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.comment + .comment {
+  margin-top: 1.5rem;
+}
+
+.comment > img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+}
+
+.commentBox {
+  flex: 1;
+}
+
+.commentContent {
+  background-color: var(--grey-700);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.commentContent > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.authorAndTime {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorAndTime > strong {
+  color: var(--grey-100);
+  line-height: 160%;
+  font-size: 0.875rem;
+}
+
+.authorAndTime > time {
+  color: var(--grey-300);
+  font-size: 0.75rem;
+  line-height: 160%;
+}
+
+.commentContent > header > button {
+  background: transparent;
+  border: none;
+  color: var(--grey-300);
+}
+
+.commentContent > header > button:hover {
+  color: var(--red-300);
+}
+
+.commentContent > p {
+  margin-top: 1rem;
+  color: var(--grey-300);
+  line-height: 160%;
+}
+
+.commentBox > footer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.commentBox > footer > svg {
+  margin-right: 0.625rem;
+}
+
+.commentBox > footer > span::before {
+  content: "&#x2022";
+  color: var(--grey-300);
+}
