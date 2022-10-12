@@ -2,11 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  /* width: 100%; */
   gap: 1rem;
 
   padding: 1.25rem 0;
 
   background-color: var(--grey-800);
+  color: var(--grey-100);
 }
 
 .header img {
