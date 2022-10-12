@@ -1,40 +1,42 @@
+import { format, formatDistanceToNow } from "date-fns";
+import ptBr from "date-fns/locale/pt-BR";
+
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 
 import styles from "./Post.module.css";
 
-export function Post() {
+export function Post({ author, content, publishedAt }) {
+  const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBr,
+  });
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    addSuffix: true,
+    locale: ptBr,
+  })
   return (
     <article className={styles.post}>
       <header className={styles.header}>
         <div className={styles.profile}>
-          <Avatar hasBorder src="https://github.com/tiagoaraujodev.png" />
+          <Avatar hasBorder src={author.avatarUrl} />
           <div className={styles.profileInfo}>
-            <strong>Tiago Araujo</strong>
-            <span>Web developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
         <time
-          dateTime="2022-05-11 08:13:30"
-          title="11 de novembro às 08:13"
+          dateTime={publishedAt.toISOString()}
+          title={publishedDateFormatted}
           className={styles.postStatus}
         >
-          Publicado há 1h
+          {publishedDateRelativeToNow}
         </time>
       </header>
       <div className={styles.content}>
-        <p>Fala galeraa 👋</p>
-        <p>
-          Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
-          no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
-        </p>
-        <p>
-          👉 <a href="">jane.design/doctorcare</a>
-        </p>
-        <p>
-          <a href="">#novoprojeto</a> <a href="">#nlw</a>{" "}
-          <a href="">#rocketseat</a>
-        </p>
+        {content.map(line => {
+          return line.type === "paragraph" ? <p>{line.content}</p> : <p><a href="#">{line.content}</a></p>;
+        })}
       </div>
       <form className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
