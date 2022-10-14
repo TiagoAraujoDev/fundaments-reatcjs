@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBr from "date-fns/locale/pt-BR";
 
@@ -7,7 +7,24 @@ import { Comment } from "./Comment";
 
 import styles from "./Post.module.css";
 
-export function Post({ author, content, publishedAt }) {
+interface IAuthor {
+  name: string;
+  avatarUrl: string;
+  role: string;
+}
+
+interface IContent {
+  type: "paragraph" | "link";
+  content: string;
+}
+
+interface IPostProps {
+  author: IAuthor,
+  content: IContent[],
+  publishedAt: Date,
+}
+
+export function Post({ author, content, publishedAt }: IPostProps) {
   const [comments, setComments] = useState(["Post muito legal!"]);
   const [newCommentText, setNewCommentText] = useState("");
 
@@ -26,18 +43,18 @@ export function Post({ author, content, publishedAt }) {
     locale: ptBr,
   });
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: FormEvent) {
     event.preventDefault();
 
     setComments([...comments, newCommentText]);
     setNewCommentText("");
   }
 
-  function handleNewCommentTyping(event) {
+  function handleNewCommentTyping(event: ChangeEvent<HTMLTextAreaElement>) {
     setNewCommentText(event.target.value);
   }
 
-  function deleteComment(commentToDelete) {
+  function deleteComment(commentToDelete: string) {
     const commentsWithoutDeleteOne = comments.filter(
       (comment) => comment !== commentToDelete
     );
