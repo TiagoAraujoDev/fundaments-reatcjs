@@ -3,7 +3,7 @@ import { Avatar } from "./Avatar";
 
 import styles from "./Comment.module.css";
 
-export function Comment() {
+export function Comment(props) {
   return (
     <div className={styles.comment}>
       <Avatar src="https://github.com/tiagoaraujodev.png" />
@@ -18,7 +18,7 @@ export function Comment() {
               <Trash size={24} />
             </button>
           </header>
-          <p>Muito bom Tiago, você é incrivel cara!</p>
+          <p>{props.content}</p>
         </div>
         <footer>
           <ThumbsUp />
